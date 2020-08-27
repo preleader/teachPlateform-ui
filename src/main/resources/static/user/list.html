@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    	<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
+    	<script type="text/javascript" src="../js/angular.min.js"></script>
+    	<script type="module" src="../js/user.js/users.js"></script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="../bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../css/default.css" rel="stylesheet"/>
+        <link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
+        <meta charset="UTF-8"/>
+        <title>用户列表</title>
+    </head>
+
+    <body>
+
+        <div class="contentDiv" ng-app='userApp' ng-controller="userController">
+
+            <h5> 《 Spring Boot 2.x 核心技术实战》第二章快速入门案例</h5>
+
+            <table class="table table-hover table-condensed">
+                <legend>
+                    <strong>用户列表</strong>
+                </legend>
+                <thead>
+                    <tr>
+                        <th>用户编号</th>
+                        <th>名称</th>
+                        <th>年龄</th>
+                        <th>管理</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in userList">
+                        <th scope="row">{{$index+1}}</th>
+                        <td><input type='text' ng-model="user.userName"/></td>
+                        <td><input type='text' ng-model="user.userAge"/></td>
+                        <td>
+	                        <a class="btn btn-danger" ng-click="del($index)" >删除</a>
+	                        <a class="btn btn-primary" ng-click="save($index)" >保存</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

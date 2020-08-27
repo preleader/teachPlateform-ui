@@ -1,0 +1,10 @@
+/* contentDiv */
+.contentDiv {padding:20px 60px;}
+input{
+	border:none;
+}
+#tipmsg{
+	position:fixed;
+	top:50%;
+	left:40%;
+}
